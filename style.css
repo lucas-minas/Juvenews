@@ -71,10 +71,16 @@ h2 {
     font-size: 0.9em;
 }
 
+.continue {
+    color: #4B7A45;
+    text-align: center;
+    font-family: 'open sans', Arial, Helvetica, sans-serif;
+}
+
 /*Conteúdo*/
 
 .tudo {
-    width: 20%;
+    width: 15%;
     height: 90vh;
 }
 #right {
@@ -88,7 +94,7 @@ main {
 }
 
 #news {
-    width: 60%;
+    width: 70%;
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -107,8 +113,7 @@ main {
 .new {
     margin: auto;
     width: 94%;
-    height: 190px;
-    display: flex;
+    height: auto;
     background-color: #fefefe;
     border: solid 2px #afafaf;
     border-radius: 15px;
@@ -144,11 +149,11 @@ main {
     opacity: 80%;
 }
 
-a > .new:hover { /*Aumenta a notícia ao colocar o mouse em cima*/
+.new:hover { /*Aumenta a notícia ao colocar o mouse em cima*/
     transform: scale(1.1)
 }
 
-a > .new:active { 
+.new:active { 
     transform: scale(3); /*Aumenta a notícia ao clicar*/
     opacity: 10%;
 }
@@ -169,7 +174,7 @@ a > .new:active {
 
 /* div da direita */
 .texto {
-    width: 470px;
+    width: 95%;
     text-align: left;
 }
 
@@ -235,11 +240,8 @@ footer > div > p {
 
     .new {
         width: 100vw;
-        position: relative;
-        display: block;
-        height: auto;
         border-radius: 5px;
-        margin: 3px 0px;
+        margin: 10px 0px;
     }
 
     .foto {
@@ -258,15 +260,14 @@ footer > div > p {
 
     .texto {
         font-size: 1em;
-        width: 100%;
         position: absolute;
-        left: 0;
-        bottom: 0;
-        padding: 15px 0 12px 0;
-        margin: 0;
-        color: #eeeeee;
-        background: linear-gradient(to bottom, #00000000, #000000c5, #000000);
+        color: #000000;
+        background-color: #fdfdfd;
         border-radius: 0 0 5px 5px;
+    }
+
+    .continue {
+        margin: 0 0 10px 0;
     }
 
     #manc {
@@ -274,7 +275,12 @@ footer > div > p {
     }
 
     .lide {
-        display: none;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
 
     hr {

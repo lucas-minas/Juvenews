@@ -18,8 +18,8 @@ body {
 }
 
 .backtosite {
+    font-size: 1.3em;
     text-align: center;
-    width: 200px;
     margin: 0px auto;
     text-decoration: none;
     color: #4B7A45;
@@ -31,11 +31,15 @@ h1 {
     margin: 30px 0 0 30px;
 }
 
-h2 {
-    font-weight: 400;
-    font-size: 1.1em;
+.autoria {
+    font-size: 1em;
     font-family: 'Open sans', Arial, Helvetica, sans-serif;
-    margin: 5px 40px;
+    color: #797979;
+    margin: 0 0 0 30px;
+}
+
+.liden {
+    font-weight: 500;
 }
 
 article > p {
