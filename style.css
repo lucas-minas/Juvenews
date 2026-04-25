@@ -79,18 +79,18 @@ h2 {
 
 /*Conteúdo*/
 
-.tudo {
+main {
+    align-items: flex-start;
+    display: flex;
+}
+
+.tudo { /*Espaços da direita e da esquerda*/
     width: 15%;
     height: 90vh;
 }
 #right {
     position: absolute;
     right: 0;
-}
-
-main {
-    align-items: flex-start;
-    display: flex;
 }
 
 #news {
