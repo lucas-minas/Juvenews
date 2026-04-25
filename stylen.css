@@ -17,6 +17,15 @@ body {
     width: 15%;
 }
 
+.backtosite {
+    text-align: center;
+    width: 200px;
+    margin: 0px auto;
+    text-decoration: none;
+    color: #4B7A45;
+    font-family: 'Open sans', Arial, Helvetica, sans-serif;
+}
+
 h1 {
     font-size: 2.2em;
     margin: 30px 0 0 30px;
@@ -37,6 +46,26 @@ article > p {
     font-size: 1.1em;
 }
 
+.imagem {
+    max-width: 50%;
+}
+
+ul {
+    font-size: 1.2em;
+    font-family: 'Open sans', Arial, Helvetica, sans-serif;
+}
+
+@media (min-width:800px) {
+    ul {
+        max-width: 50%;
+    }
+    
+    .imagemdiv {
+        display: flex;
+    }
+
+}
+
 @media (max-width: 800px) {
     .back {
         width: 100%;
@@ -49,4 +78,11 @@ article > p {
     p, h2 { 
         margin: 20px;
     }
+
+    .imagem {
+    max-width: 90%;
+    margin: 0 15px;
+}
+
+
 }
