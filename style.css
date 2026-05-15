@@ -27,6 +27,27 @@ header > a > img {
 
 @media (min-width:769px){
 
+    #bnews {
+    flex: 1;
+    margin: 40px 0 0 0;
+    display: block;
+    }
+
+    #snews {
+        margin: 40px 0 0 0;
+        width: 32%;
+    }
+
+    .snew {
+    margin: auto;
+    background-color: #fefefe;
+    border: solid 2px #afafaf;
+    border-radius: 15px;
+    margin: 8px 0px;
+    box-shadow: 0px 5px 20px #b9b9b9;
+    width: 100%;
+    }
+
     .i  {
     color: #6e6e6e;
     font-size: 2em;
@@ -39,7 +60,7 @@ header > a > img {
     border-radius: 10px;
     line-height: 0.8em;
     z-index: 10;
-}
+    }
 
 .if {
     font-family: Arial, Helvetica, sans-serif;
@@ -54,7 +75,7 @@ header > a > img {
     box-shadow: 0 0 10px 1px #00000063;
     padding: 6px;
     z-index: 10;
-}
+    }
 }
 
 h1 {
@@ -69,12 +90,6 @@ h1 {
 h2 {
     margin: 0;
     font-size: 0.9em;
-}
-
-.continue {
-    color: #4B7A45;
-    text-align: center;
-    font-family: 'open sans', Arial, Helvetica, sans-serif;
 }
 
 /*Conteúdo*/
@@ -96,13 +111,20 @@ main {
 #news { /*Conjunto de todas as notícias*/
     width: 70%;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     gap: 10px;
     position: relative;
-    align-items: center;
+
 }
 
-#news > a {
+#news > #bnews > a {
+    color: #000000;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+}
+
+#news > #snews > a {
     color: #000000;
     text-decoration: none;
     display: flex;
@@ -110,9 +132,8 @@ main {
 }
 
 /* Notícia individual */
-.new {
+.bnew, .cf {
     margin: auto;
-    width: 94%;
     background-color: #fefefe;
     border: solid 2px #afafaf;
     border-radius: 15px;
@@ -142,38 +163,61 @@ main {
 /*Animação*/
 
 
-@media (min-width:800px) {
+@media (min-width:768px) {
     
-.shadow:hover { /*Sombra da foto diminui*/
-    opacity: 80%;
+    .shadow:hover { /*Sombra da foto diminui*/
+        opacity: 80%;
+    }
+
+    .bnew, .cf {
+        flex: 1;
+    }
+
+    .bnew:hover, .cf:hover { /*Aumenta a notícia ao colocar o mouse em cima*/
+        transform: scale(1.1)
+    }
+
+    .bnew:active, .cf:active { 
+        transform: scale(3); /*Aumenta a notícia ao clicar*/
+        opacity: 10%;
+    }
+
+    .bnew:hover, .cf:hover {
+        border: 3px #4B7A45 solid;
+    }
+
+    .bnew:hover, .cf:hover > .texto > hr {
+        border-color: #4B7A45;
+    }
+
+    .snew {
+        flex: 1;
+    }
+
+    .snew:hover > .scont > .stxt > .manchete { /*Aumenta a notícia ao colocar o mouse em cima*/
+        color: #deffda;
+        text-decoration: underline;
+    }
+
+    .snew:active { 
+        transform: scale(3); /*Aumenta a notícia ao clicar*/
+        opacity: 10%;
+    }
+
+    .snew:hover {
+        border: 3px #4B7A45 solid;
+        border-radius: 18px;
+    }
+
+    .info:hover > .if {
+        display: block;
+    }
 }
 
-.new:hover { /*Aumenta a notícia ao colocar o mouse em cima*/
-    transform: scale(1.1)
-}
-
-.new:active { 
-    transform: scale(3); /*Aumenta a notícia ao clicar*/
-    opacity: 10%;
-}
-
-.new:hover {
-    border: 3px #4B7A45 solid;
-}
-
-.new:hover > .texto > hr {
-    border-color: #99c093;
-}
-
-.info:hover > .if {
-    display: block;
-}
-
-}
-
-/* div da direita */
+/* div à direita na notícia grande*/
 .texto {
-    width: 95%;
+    flex: 1;
+    margin: 0 15px;
     text-align: left;
 }
 
@@ -181,17 +225,25 @@ main {
 .fotodestaque {
     position: relative;
     margin: 0;
-    width: 260px;
-    border: #000000a4 solid 2px;
-    border-radius: 15px;
+    width: 100%;
 }
 
 /*Texto*/
+
+.categoria {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    margin: 8px 0 0 0;
+    max-width: 50%;
+    color: #444444;
+}
+
 .manchete {
     font-family: 'Montserrat';
-    line-height: 0.9em;
+    line-height: 1em;
     margin: 2px;
-    margin-top: 20px;
+    margin-top: 8px;
+    color: #446d3f;
 }
 
 hr {
@@ -200,10 +252,63 @@ hr {
     width: 100%;
 }
 
-.lide {
+.topic {
     font-family: Arial, Helvetica, sans-serif;
     color: #5c5c5c;
-    margin: 2px;
+    margin: 5px 0;
+}
+
+.newinfo {
+    width: 100%;
+    display: inline-flex;
+    justify-content: space-between;
+}
+
+.newinfo > p {
+    margin: 10px 5%;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 300;
+    color: #5c5c5c;
+}
+
+/*.snew*/
+
+.snew {
+    width: 100%;
+    aspect-ratio: 3 / 2;
+    display: flex;
+}
+
+.simg {
+    width: 32%;
+    position: absolute;
+    z-index: 1;
+}
+
+.simg > img {
+    width: 100%;
+    border-radius: 15px;
+    pointer-events: none;
+}
+
+.scont {
+    background-image: linear-gradient(to bottom, #00000000, #00000009, #000000);
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    border-radius: 15px;
+}
+
+.scat {
+    flex: 1;
+    text-indent: 1em;
+}
+
+.stxt > h1{
+    color: #f9f9f9;
+    margin-bottom: 5px;
+    padding-left: 12px;
 }
 
 /*Footer*/
@@ -232,17 +337,28 @@ footer > div > p {
         display: none;
     }
 
-    #news {
-        width: 100%;
-        min-height: 90vh;
+    #bnews {
+        min-height: 100vh;
     }
 
-    .new {
+    .bnew, .cf {
         width: 100vw;
         border-radius: 5px;
         margin: 10px 0px;
         display: flex;
-        height: 11em;
+        flex-direction: column;
+    }
+
+    .cf > .texto > .topic {
+        display: none;
+    }
+
+    .cf > .texto > .newinfo {
+        display: none;
+    }
+
+    #snews {
+        display: none;
     }
 
     .foto {
@@ -261,7 +377,6 @@ footer > div > p {
 
     .texto {
         font-size: 1em;
-        position: absolute;
         color: #000000;
         background-color: #fdfdfd;
     }
@@ -274,22 +389,8 @@ footer > div > p {
         margin-left: 5px;
     }
 
-    .lide {
-        display: -webkit-box;
-        -webkit-line-clamp: 3;
-        line-clamp: 3;
-        -webkit-box-orient: vertical;
-        overflow: hidden;
-        text-overflow: ellipsis;
-    }
-
     hr {
         display: none;
-    }
-
-    /*Animação*/
-    a > .new > .texto > .manchete:active {
-        background: linear-gradient(to bottom, #00000000, #000000c5, #00000089, #000000);
     }
 
     /*info*/
